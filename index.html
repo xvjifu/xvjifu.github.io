@@ -115,5 +115,38 @@
     <a target="_blank" href="http://tushare.org/">
         <image src="http://tushare.org/favicon.ico" onerror="this.src='ico/favicon_gitee.ico'"><span>Tushare -财经数据接口包</span>
     </a>
+   <div id="container" style="height: 100%"></div>
+   <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+   <script type="text/javascript">
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+		series : [
+			{
+				name: '背景',
+				type: 'pie',
+				radius : '150%',
+				center: ['50%', '50%'],
+				data:[
+					{value:5, name:'个人',itemStyle : {color:'#08d'}},
+					{value:12, name:'机构',itemStyle : {color:'#0d8'}}
+				]
+			}
+        ]
+    };
+    var sumPie = 0;
+    while(sumPie<100){
+        var onePie = Math.round(Math.random()*50);
+        if(sumPie+onePie>100){
+            onePie=100-sumPie
+        }
+        option.series[0].data.push({"value":onePie, "name":"个人",itemStyle : {"color":'#'+Math.floor(Math.random()*16777215).toString(16)}});
+    }
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+   </script>
 </body>
 </html>
