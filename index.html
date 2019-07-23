@@ -129,7 +129,7 @@
 			{
 				name: '背景',
 				type: 'pie',
-				radius : '180%',
+				radius : '200%',
 				center: ['50%', '50%'],
 				data:[
 				]
@@ -143,7 +143,7 @@
             onePie=100-sumPie
         }
 	sumPie += onePie;
-        option.series[0].data.push({"value":onePie, "name":"个人",itemStyle : {"color":'#'+Math.floor(Math.random()*16777215).toString(16)}});
+        option.series[0].data.push({"value":onePie, "name":"",itemStyle : {"color":'#'+Math.floor(Math.random()*16777215).toString(16)}});
     }
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
