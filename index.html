@@ -151,6 +151,7 @@
         }
 	sumPie += onePie;
 	var cn = Math.floor(Math.random()*16777215).toString(16);
+	cn = ('00000'+cn).slice(-6);
         option.series[0].data.push({"value":onePie, "name":cn,itemStyle : {"color":'#'+cn}});
     }
     if (option && typeof option === "object") {
