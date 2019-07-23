@@ -127,9 +127,16 @@
     option = {
 		series : [
 			{
+				label: {
+					normal: {
+						show: true,
+						formatter: '{b}',
+						position: 'inner'
+					}
+				},
 				name: '背景',
 				type: 'pie',
-				radius : '200%',
+				radius : '190%',
 				center: ['50%', '50%'],
 				data:[
 				]
@@ -143,7 +150,8 @@
             onePie=100-sumPie
         }
 	sumPie += onePie;
-        option.series[0].data.push({"value":onePie, "name":"",itemStyle : {"color":'#'+Math.floor(Math.random()*16777215).toString(16)}});
+	var cn = Math.floor(Math.random()*16777215).toString(16);
+        option.series[0].data.push({"value":onePie, "name":cn,itemStyle : {"color":'#'+cn}});
     }
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
